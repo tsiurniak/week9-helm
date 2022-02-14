@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: env-local
+data:
+  .env: |-
+    NEXT_PUBLIC_SUPABASE_URL=https://trythnjjireazjheiefj.supabase.co
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNTkzOTY5LCJleHAiOjE5NTgxNjk5Njl9.W-zqMcQXHU930nA0FPZxIiQb60hWb7gMemwr0as5-a0

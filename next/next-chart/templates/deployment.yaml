@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: week6-next
+spec:
+  selector:
+    matchLabels:
+      app: week6-next
+  template:
+    metadata:
+      labels:
+        app: week6-next
+    spec:
+      containers:
+        - name: week6-next
+          image: tsiurniak/week6-next
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+          - mountPath: /week6-next/.env.local
+            name: env-local
+            readOnly: true
+            subPath: .env.local
+      volumes:
+      - configMap:
+          defaultMode: 420
+          items:
+          - key: .env
+            path: .env.local
+          name: env-local
+        name: env-local
+      restartPolicy: Always
